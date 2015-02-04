@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import HanekeBridge
+//import HanekeBridge
 
 public class DiskCache {
     

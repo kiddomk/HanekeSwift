@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KYCircularProgress
 
 extension HanekeGlobals {
     
@@ -33,6 +34,9 @@ public class NetworkFetcher<T : DataConvertible> : Fetcher<T> {
         let key =  URL.absoluteString!
         super.init(key: key)
     }
+    
+    var progress: Float = 0.0
+    public var progressView: KYCircularProgress!
     
     public var session : NSURLSession { return NSURLSession.sharedSession() }
     

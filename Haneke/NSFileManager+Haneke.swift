@@ -56,7 +56,7 @@ extension NSFileManager {
             Log.error("Failed to list directory", error)
         }
     }
-    
+
 }
 
 func < (lhs: NSDate, rhs: NSDate) -> Bool {

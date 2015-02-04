@@ -34,9 +34,6 @@ public class NetworkFetcher<T : DataConvertible> : Fetcher<T> {
         super.init(key: key)
     }
     
-    var progress: Float = 0.0
-    var progressView: KYCircularProgress!
-    
     public var session : NSURLSession { return NSURLSession.sharedSession() }
     
     var task : NSURLSessionDataTask? = nil

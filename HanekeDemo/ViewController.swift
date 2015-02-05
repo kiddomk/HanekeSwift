@@ -16,10 +16,10 @@ class ViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: CellReuseIdentifier)
+        self.collectionView?.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: CellReuseIdentifier)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSizeMake(100, 100)
-        self.collectionView.collectionViewLayout = layout
+        self.collectionView?.collectionViewLayout = layout
         
         self.initializeItemsWithURLs()
     }
@@ -42,7 +42,18 @@ class ViewController: UICollectionViewController {
     // MARK: Helpers
     
     func initializeItemsWithURLs() {
-        items = ["http://imgs.xkcd.com/comics/election.png",
+        items = ["http://az412776.vo.msecnd.net/app96/494429-1.png",
+            "http://az412776.vo.msecnd.net/app96/494430-1.png",
+            "http://az412776.vo.msecnd.net/app96/495527-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/495826-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540462-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540464-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540463-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540465-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540461-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540460-1.jpg",
+            "http://az412776.vo.msecnd.net/app96/540463-1.jpg",
+            "http://imgs.xkcd.com/comics/election.png",
             "http://imgs.xkcd.com/comics/scantron.png",
             "http://imgs.xkcd.com/comics/secretary_part_5.png",
             "http://imgs.xkcd.com/comics/secretary_part_4.png",

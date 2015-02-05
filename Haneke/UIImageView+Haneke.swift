@@ -8,7 +8,43 @@
 
 import UIKit
 
-public extension UIImageView {
+public class PoqAsyncImageView : UIImageView {
+    
+    var progressView: KYCircularProgress!
+    var progress:Double=0
+    
+    required public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupProgressView()
+    }
+
+    required public init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupProgressView()
+    }
+    
+    func setupProgressView(){
+
+        //set up small in the center
+        var imageWidth = fminf(Float(self.bounds.size.width), Float(self.bounds.size.height));
+        var progressViewWidth = CGFloat(imageWidth/9);
+        var frame = CGRectMake(0, 0, progressViewWidth, progressViewWidth);
+        
+        progressView=KYCircularProgress(frame: frame)
+        progressView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+        progressView.progress=0.5
+        progressView.colors=[000000]
+        self.addSubview(progressView)
+        
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateProgress:", name: "DownloadProgress", object: nil)
+    }
+//    
+//    func updateProgress(notification: NSNotification) {
+//        if let progress=notification.userInfo?["progress"] as? Double{
+//        println("progress \(progress)")
+//        }
+//        
+//    }
     
     public var hnk_format : Format<UIImage> {
         let viewSize = self.bounds.size
@@ -18,7 +54,7 @@ public extension UIImageView {
     }
     
     public func hnk_setImageFromURL(URL: NSURL, placeholder : UIImage? = nil, format : Format<UIImage>? = nil, failure fail : ((NSError?) -> ())? = nil, success succeed : ((UIImage) -> ())? = nil) {
-        let fetcher = NetworkFetcher<UIImage>(URL: URL)
+        let fetcher = NSURLSessionFetcher<UIImage>(URL: URL)//NetworkFetcher<UIImage>(URL: URL)
         self.hnk_setImageFromFetcher(fetcher, placeholder: placeholder, format: format, failure: fail, success: succeed)
     }
     
@@ -41,7 +77,6 @@ public extension UIImageView {
         self.hnk_cancelSetImage()
         
         self.hnk_fetcher = fetcher
-        
             let didSetImage = self.hnk_fetchImageForFetcher(fetcher, format: format, failure: fail, success: succeed)
         
         if didSetImage { return }
@@ -90,6 +125,7 @@ public extension UIImageView {
     }
 
     func hnk_fetchImageForFetcher(fetcher : Fetcher<UIImage>, format : Format<UIImage>? = nil, failure fail : ((NSError?) -> ())?, success succeed : ((UIImage) -> ())?) -> Bool {
+        
         let cache = Shared.imageCache
         let format = format ?? self.hnk_format
         if cache.formats[format.name] == nil {
@@ -121,9 +157,11 @@ public extension UIImageView {
         if let succeed = succeed {
             succeed(image)
         } else {
+            
             let duration : NSTimeInterval = animated ? 0.1 : 0
             UIView.transitionWithView(self, duration: duration, options: .TransitionCrossDissolve, animations: {
                 self.image = image
+                
             }, completion: nil)
         }
     }

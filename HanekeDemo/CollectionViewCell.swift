@@ -11,7 +11,7 @@ import Haneke
 
 class CollectionViewCell: UICollectionViewCell {
     
-    var imageView : UIImageView!
+    var imageView : PoqAsyncImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +24,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func initHelper() {
-        imageView = UIImageView(frame: self.contentView.bounds)
+        imageView = PoqAsyncImageView(frame: self.contentView.bounds)
         imageView.clipsToBounds = true
         imageView.contentMode = .ScaleAspectFill
         imageView.autoresizingMask = .FlexibleWidth | .FlexibleHeight

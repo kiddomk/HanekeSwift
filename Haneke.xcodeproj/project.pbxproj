@@ -75,6 +75,8 @@
 		E00F727B1A829897004712BA /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F72791A829897004712BA /* KYCircularProgress.swift */; };
 		E00F727C1A829897004712BA /* NSURLSessionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F727A1A829897004712BA /* NSURLSessionFetcher.swift */; };
 		E00F72811A837AD9004712BA /* DownloadSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F72801A837AD9004712BA /* DownloadSessionDelegate.swift */; };
+		E0B9F7341A83D01E00C19DFC /* PoqAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9F7331A83D01E00C19DFC /* PoqAsyncImageView.swift */; };
+		EB982195129BC606C16D4404 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CA4E6F3B3862BB9BE40EB4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,11 +127,13 @@
 /* Begin PBXFileReference section */
 		36BB64F419BECE1E006A1309 /* CGSize+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Swift.swift"; sourceTree = "<group>"; };
 		36C9E04E198C03F80083574B /* UIImage+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Test.swift"; sourceTree = "<group>"; };
+		49CA4E6F3B3862BB9BE40EB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0D39C019CF4BE000452BC4 /* DiskFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskFetcherTests.swift; sourceTree = "<group>"; };
 		8C0D39C519CF4CB900452BC4 /* DiskFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskFetcher.swift; sourceTree = "<group>"; };
 		8C12904A19EE5B040002B336 /* UIView+Haneke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Haneke.swift"; sourceTree = "<group>"; };
 		8CD6E29819DB65D000F44FCF /* UIButton+Haneke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Haneke.swift"; sourceTree = "<group>"; };
 		8CD6E29E19E3467F00F44FCF /* UIButton+HanekeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+HanekeTests.swift"; sourceTree = "<group>"; };
+		9854E9901576A747044378E5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A0026E9A19C9BFBC004DE0C6 /* HanekeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanekeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0026E9D19C9BFBC004DE0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0026E9E19C9BFBC004DE0C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,9 @@
 		E00F72791A829897004712BA /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		E00F727A1A829897004712BA /* NSURLSessionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionFetcher.swift; sourceTree = "<group>"; };
 		E00F72801A837AD9004712BA /* DownloadSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadSessionDelegate.swift; sourceTree = "<group>"; };
+		E0B9F7321A83D01E00C19DFC /* Haneke-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Haneke-Bridge-Header.h"; sourceTree = "<group>"; };
+		E0B9F7331A83D01E00C19DFC /* PoqAsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoqAsyncImageView.swift; sourceTree = "<group>"; };
+		E96A5F985E575BF638CE21FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB982195129BC606C16D4404 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +216,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DFD59BED2C66185CFACD51D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49CA4E6F3B3862BB9BE40EB4 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A0026E9B19C9BFBC004DE0C6 /* HanekeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E0B9F7321A83D01E00C19DFC /* Haneke-Bridge-Header.h */,
+				E0B9F7331A83D01E00C19DFC /* PoqAsyncImageView.swift */,
 				A0026E9E19C9BFBC004DE0C6 /* AppDelegate.swift */,
 				A0026EC219C9C24C004DE0C6 /* CollectionViewCell.swift */,
 				A0026EA519C9BFBC004DE0C6 /* Images.xcassets */,
@@ -287,6 +305,8 @@
 				A095C9651980418C00CD0F4C /* HanekeTests */,
 				A0026E9B19C9BFBC004DE0C6 /* HanekeDemo */,
 				A095C9571980418C00CD0F4C /* Products */,
+				A86EB50CA6AAF433FA0FB661 /* Pods */,
+				6DFD59BED2C66185CFACD51D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,6 +405,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		A86EB50CA6AAF433FA0FB661 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9854E9901576A747044378E5 /* Pods.debug.xcconfig */,
+				E96A5F985E575BF638CE21FB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -421,10 +450,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A095C96C1980418C00CD0F4C /* Build configuration list for PBXNativeTarget "Haneke" */;
 			buildPhases = (
+				C6127DDA9AFF1B8A624A1AD0 /* Check Pods Manifest.lock */,
 				A095C9511980418C00CD0F4C /* Sources */,
 				A095C9521980418C00CD0F4C /* Frameworks */,
 				A095C9531980418C00CD0F4C /* Headers */,
 				A095C9541980418C00CD0F4C /* Resources */,
+				BE8BAED205C1040033164671 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -558,6 +589,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BE8BAED205C1040033164671 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6127DDA9AFF1B8A624A1AD0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A0026E9619C9BFBC004DE0C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -565,6 +629,7 @@
 			files = (
 				A0026EA119C9BFBC004DE0C6 /* ViewController.swift in Sources */,
 				A0026E9F19C9BFBC004DE0C6 /* AppDelegate.swift in Sources */,
+				E0B9F7341A83D01E00C19DFC /* PoqAsyncImageView.swift in Sources */,
 				A0026EC319C9C24C004DE0C6 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +753,7 @@
 				INFOPLIST_FILE = HanekeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HanekeDemo/Haneke-Bridge-Header.h";
 			};
 			name = Debug;
 		};
@@ -698,6 +764,7 @@
 				INFOPLIST_FILE = HanekeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HanekeDemo/Haneke-Bridge-Header.h";
 			};
 			name = Release;
 		};
@@ -740,6 +807,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -779,6 +847,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -788,6 +857,7 @@
 		};
 		A095C96D1980418C00CD0F4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9854E9901576A747044378E5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -799,12 +869,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A095C96E1980418C00CD0F4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E96A5F985E575BF638CE21FB /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -816,6 +888,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
 
   s.source_files = 'Haneke/*.swift'
+  s.dependency 'MMMaterialDesignSpinner'
 end

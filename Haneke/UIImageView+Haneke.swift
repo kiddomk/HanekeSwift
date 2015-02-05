@@ -8,37 +8,36 @@
 
 import UIKit
 
-public class PoqAsyncImageView : UIImageView {
+public extension UIImageView {
     
-    var progressView: KYCircularProgress!
-    var progress:Double=0
-    
-    required public override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupProgressView()
-    }
-
-    required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupProgressView()
-    }
-    
-    func setupProgressView(){
-
-        //set up small in the center
-        var imageWidth = fminf(Float(self.bounds.size.width), Float(self.bounds.size.height));
-        var progressViewWidth = CGFloat(imageWidth/9);
-        var frame = CGRectMake(0, 0, progressViewWidth, progressViewWidth);
-        
-        progressView=KYCircularProgress(frame: frame)
-        progressView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-        progressView.progress=0.5
-        progressView.colors=[000000]
-        self.addSubview(progressView)
-        
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateProgress:", name: "DownloadProgress", object: nil)
-    }
+//    var progressView: KYCircularProgress!
+//    var progress:Double=0
 //    
+//    required public override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setupProgressView()
+//    }
+//
+//    required public init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        setupProgressView()
+//    }
+//    
+//    func setupProgressView(){
+//
+//        //set up small in the center
+//        var imageWidth = fminf(Float(self.bounds.size.width), Float(self.bounds.size.height));
+//        var progressViewWidth = CGFloat(imageWidth/9);
+//        var frame = CGRectMake(0, 0, progressViewWidth, progressViewWidth);
+//        
+//        progressView=KYCircularProgress(frame: frame)
+//        progressView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+//        progressView.progress=0.5
+//        progressView.colors=[000000]
+//        self.addSubview(progressView)
+//        
+//    }
+//
 //    func updateProgress(notification: NSNotification) {
 //        if let progress=notification.userInfo?["progress"] as? Double{
 //        println("progress \(progress)")
@@ -54,7 +53,7 @@ public class PoqAsyncImageView : UIImageView {
     }
     
     public func hnk_setImageFromURL(URL: NSURL, placeholder : UIImage? = nil, format : Format<UIImage>? = nil, failure fail : ((NSError?) -> ())? = nil, success succeed : ((UIImage) -> ())? = nil) {
-        let fetcher = NSURLSessionFetcher<UIImage>(URL: URL)//NetworkFetcher<UIImage>(URL: URL)
+        let fetcher = NSURLSessionFetcher<UIImage>(URL: URL)//NetworkFetcher<UIImage>(URL: URL) ////
         self.hnk_setImageFromFetcher(fetcher, placeholder: placeholder, format: format, failure: fail, success: succeed)
     }
     

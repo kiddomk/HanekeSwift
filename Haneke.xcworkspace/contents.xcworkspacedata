@@ -7,4 +7,10 @@
    <FileRef
       location = "group:Haneke.playground">
    </FileRef>
+   <FileRef
+      location = "group:Haneke.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

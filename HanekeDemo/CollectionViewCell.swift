@@ -32,7 +32,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        imageView.hnk_cancelSetImage()
+        imageView.prepareForReuse()
         imageView.image = nil
     }
     

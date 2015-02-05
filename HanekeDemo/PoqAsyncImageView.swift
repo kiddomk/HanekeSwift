@@ -12,6 +12,8 @@ import Haneke
 class PoqAsyncImageView: UIImageView {
     
     var spinnerView:MMMaterialDesignSpinner?
+    let cache = Shared.imageCache
+    var fetcher : NetworkFetcher<UIImage>?
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,7 +35,6 @@ class PoqAsyncImageView: UIImageView {
         spinnerView?.lineWidth = 1.5;
         // Set the tint color of the spinner
         spinnerView?.tintColor = UIColor.redColor()
-        
         self.addSubview(spinnerView!)
     
     }
@@ -41,12 +42,12 @@ class PoqAsyncImageView: UIImageView {
     func getImageFromURL(URL:NSURL){
         spinnerView?.startAnimating()
         
-        let cache = Shared.imageCache
-        let fetcher = NetworkFetcher<UIImage>(URL: URL)
-        cache.fetch(fetcher: fetcher).onSuccess { image in
-            
+        self.hnk_setImageFromURL(URL)
+
+        fetcher = NetworkFetcher<UIImage>(URL: URL)
+        cache.fetch(fetcher: fetcher!).onSuccess { image in
+           
             self.spinnerView?.stopAnimating()
-            //self.spinnerView?.removeFromSuperview()
             //animation
             let duration : NSTimeInterval = 0.1
             UIView.transitionWithView(self, duration: duration, options: .TransitionCrossDissolve, animations: {
@@ -54,5 +55,12 @@ class PoqAsyncImageView: UIImageView {
     
                 }, completion: nil)
         }
+    }
+    
+    func prepareForReuse(){
+        if let existingFetcher=fetcher{
+            existingFetcher.cancelFetch()
+        }
+        
     }
 }
